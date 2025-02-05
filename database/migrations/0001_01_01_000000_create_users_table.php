@@ -6,25 +6,28 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string("number", 10)->unique();
+            $table->enum('gender', ['male', 'female', 'other'])->nullable();
+            $table->date("dob");
+            $table->string("nationality");
+            $table->text("address");
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
             $table->timestamps();
         });
 
-        Schema::create('password_reset_tokens', function (Blueprint $table) {
-            $table->string('email')->primary();
-            $table->string('token');
-            $table->timestamp('created_at')->nullable();
+        Schema::create("user_government_datas", function (Blueprint $table) {
+            $table->id();
+            $table->foreignId("user_id")->constrained("users")->onDelete("cascade");
+            $table->string("id_type");
+            $table->string("id_number");
+            $table->string("issued_country");
+            $table->timestamps();
         });
 
         Schema::create('sessions', function (Blueprint $table) {
@@ -43,7 +46,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('users');
-        Schema::dropIfExists('password_reset_tokens');
+        Schema::dropIfExists('user_government_datas');
         Schema::dropIfExists('sessions');
     }
 };
