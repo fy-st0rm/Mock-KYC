@@ -11,19 +11,26 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string("number", 10)->unique();
-            $table->enum('gender', ['male', 'female', 'other'])->nullable();
+            $table->string('email')
+                  ->unique();
+            $table->string("number", 14)
+                  ->unique();
+            $table->enum('gender', ['male', 'female', 'other'])
+                  ->nullable();
             $table->date("dob");
             $table->string("nationality");
             $table->text("address");
-            $table->timestamp('email_verified_at')->nullable();
+            $table->timestamp('email_verified_at')
+                  ->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
 
         Schema::create("user_government_datas", function (Blueprint $table) {
             $table->id();
-            $table->foreignId("user_id")->constrained("users")->onDelete("cascade");
+            $table->foreignId("user_id")
+                  ->constrained("users")
+                  ->onDelete("cascade");
             $table->string("id_type");
             $table->string("id_number");
             $table->string("issued_country");
