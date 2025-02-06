@@ -4,7 +4,7 @@
 
 @section("content")
     <div class="w-screen h-screen flex items-center justify-center bg-gray-500">
-        <div class="w-[25%] h-[60%] bg-gray-300 shadow-lg rounded-lg flex flex-col items-center justify-center px-10 py-1">
+        <div class="bg-gray-300 shadow-lg rounded-lg flex flex-col items-center justify-center p-20">
             <p class="text-black text-4xl font-semibold mb-16"> Login to KYC </p>
             <form action="/login" method="POST" class="w-full flex flex-col">
                 @csrf

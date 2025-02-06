@@ -11,17 +11,15 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')
-                  ->unique();
-            $table->string("number", 14)
-                  ->unique();
-            $table->enum('gender', ['male', 'female', 'other'])
-                  ->nullable();
+            $table->string('email')->unique();
+            $table->string("number", 14)->unique();
+            $table->enum('gender', ['male', 'female', 'other'])->nullable();
             $table->date("dob");
             $table->string("nationality");
             $table->text("address");
-            $table->timestamp('email_verified_at')
-                  ->nullable();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('otp')->nullable();
+            $table->timestamp('otp_expires_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

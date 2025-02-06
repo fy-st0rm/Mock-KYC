@@ -23,6 +23,8 @@ class User extends Authenticatable implements MustVerifyEmail
         "nationality",
         "address",
         "email_verified_at",
+        "otp",
+        "otp_expires_at",
     ];
     protected $hidden = [];
 
@@ -36,6 +38,7 @@ class User extends Authenticatable implements MustVerifyEmail
         return [
             'email_verified_at' => 'datetime',
             'dob' => 'date',
+            'otp_expires_at' => 'datetime',
         ];
     }
 }
