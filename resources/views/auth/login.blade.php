@@ -10,7 +10,7 @@
                 @csrf
                 <input type="email" name="email" placeholder="Email" class="p-2 rounded bg-gray-200 text-gray-900 mb-3 focus:outline-none focus:ring-2 focus:ring-blue-300" required>
                 <input type="text" name="number" placeholder="Phone number" class="p-2 rounded bg-gray-200 text-gray-900 mb-3 focus:outline-none focus:ring-2 focus:ring-blue-300" required>
-                <button type="submit" class="bg-white text-black font-semibold p-2 rounded hover:bg-blue-200 transition">Login</button>
+                <button type="submit" class="bg-white text-black font-semibold p-2 rounded hover:bg-blue-200 transition shadow-lg">Login</button>
             </form>
 
             {{-- Display error message --}}

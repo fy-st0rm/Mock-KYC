@@ -37,4 +37,10 @@ class LoginController extends Controller
             'error' => 'The provided credentials do not match our records.',
         ]);
     }
+
+    public function logout(Request $request): RedirectResponse
+    {
+        Auth::logout();
+        return redirect()->route("login");
+    }
 }
