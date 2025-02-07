@@ -13,7 +13,11 @@ Route::get("/", [LoginController::class, "show"])->name("login");
 Route::post("/login", [LoginController::class, "login"]);
 
 Route::middleware(["auth", "verified"])->group(function () {
-    Route::get("/home", [HomeController::class, "show"])->name("home");
+    Route::get("/home", [HomeController::class, "show"])
+        ->name("home");
+
+    Route::post("/user/update", [HomeController::class, "update"])
+        ->name("user.update");
 });
 
 Route::middleware("auth")->group(function () {

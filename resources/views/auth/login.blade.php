@@ -15,7 +15,7 @@
 
             {{-- Display error message --}}
             @error("error")
-                <div class="w-full bg-red-500 text-white p-2 rounded mb-3 mt-3 text-center">
+                <div class="bg-red-500 text-white p-2 rounded mb-3 mt-3 text-center">
                     {{ $message }}
                 </div>
             @enderror

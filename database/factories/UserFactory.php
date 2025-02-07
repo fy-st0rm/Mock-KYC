@@ -17,7 +17,7 @@ class UserFactory extends Factory
         // Ensure the generated phone number is unique
         do {
             $carrierCode = rand(97, 98);
-            $number = rand(1000000, 9999999);
+            $number = rand(10000000, 99999999);
             $phoneNumber = "+977$carrierCode$number";
         } while (in_array($phoneNumber, $generatedPhoneNumbers));
 

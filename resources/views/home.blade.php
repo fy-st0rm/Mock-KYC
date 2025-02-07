@@ -22,7 +22,7 @@
         </div>
 
         <!-- Form -->
-        <form method="POST" class="mt-10">
+        <form action="{{ route('user.update') }}" method="POST" class="mt-10">
             @csrf
 
             <!-- Personal Info -->
@@ -124,6 +124,23 @@
                 </button>
             </div>
         </form>
+
+        <!-- Response Handler -->
+        @if (session("sucess"))
+            <p class="text-green-600 font-semibold">
+                {{ session("sucess") }}
+            </p>
+        @endif
+
+        @if ($errors->any())
+            <div class="bg-red-500 text-white p-2 rounded">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
     </div>
 </div>
 
