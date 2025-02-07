@@ -29,7 +29,7 @@ return new class extends Migration
             $table->foreignId("user_id")
                   ->constrained("users")
                   ->onDelete("cascade");
-            $table->string("id_type");
+            $table->enum("id_type", ['Passport', 'National ID', 'Driver License']);
             $table->string("id_number");
             $table->string("issued_country");
             $table->timestamps();

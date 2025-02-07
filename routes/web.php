@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\OTPController;
 
@@ -12,9 +13,7 @@ Route::get("/", [LoginController::class, "show"])->name("login");
 Route::post("/login", [LoginController::class, "login"]);
 
 Route::middleware(["auth", "verified"])->group(function () {
-    Route::get("/home", function() {
-        return view("home");
-    })->name("home");
+    Route::get("/home", [HomeController::class, "show"])->name("home");
 });
 
 Route::middleware("auth")->group(function () {
