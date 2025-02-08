@@ -85,4 +85,7 @@ This is a mock KYC (Know Your Customer) application built using Laravel. The app
 where user data is displayed and can be updated.
 
     ![Home](screenshots/home-demo.png)
+
+
+	![Gov](screenshots/gov-details.png)
     
