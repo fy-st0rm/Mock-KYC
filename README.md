@@ -62,17 +62,27 @@ This is a mock KYC (Know Your Customer) application built using Laravel. The app
 1. **Go to** ```http://localhost:8000```
 
 2. Get the dummy credentials from the database.
+
     ![Database](screenshots/db-demo.png)
 
+
 3. **Login** using the credentials
+
     ![Login](screenshots/login-demo.png)
 
+
 4. Check your **Mailtrap** inbox for the **OTP Mail**
+
     ![Mailtrap](screenshots/mail-demo.png)
 
+
 5. **Verify** the given otp.
+
     ![Verify](screenshots/otp-demo.png)
+
 
 6. Once verified you'll be redriected to the **home page**,
 where user data is displayed and can be updated.
+
     ![Home](screenshots/home-demo.png)
+    
